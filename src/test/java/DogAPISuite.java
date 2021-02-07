@@ -2,12 +2,14 @@ import core.Path;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import tools.RestUtil;
+import tools.events.TestNGListener;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.requestSpecification;
 
+@Listeners({TestNGListener.class})
 public class DogAPISuite {
 
     private ResponseSpecification responseSpecification;
